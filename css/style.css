@@ -6,6 +6,8 @@
 /*----- Type Selectors --------*/
 h3{
     text-transform: uppercase;
+    padding: 0 1em;
+    font-size: medium;
 }
 h2{
     font-size: .5em;
@@ -18,14 +20,31 @@ h1{
    width: 45%; 
    padding: 0;
 }
-.nav{
+.nav, .traffic-nav{
     display: flex;
     flex-direction: row;
     list-style: none;
 }
+.social-stats{
+    display: flex;
+    flex-direction: column;
+}
+.social-container{
+    border: 1px solid lightgray;
+    background-color: #eeeeee;
+    margin: .5em 1em;
+}
+.traffic-nav{
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.traffic-nav li{
+    margin: 0 auto;
+}
 .grid-container{
     display: grid;
-    width: 100%;
     grid-template-columns: 100%;
     grid-template-rows: auto;
     grid-template-areas: "header" "nav" "main";
@@ -43,6 +62,9 @@ main{
     grid-area: "main";
     background-color: white;
 }
+.headline{
+    margin-right: auto;
+}
 .profile-image{
     border-radius: 25px;
     height: 35px;
@@ -52,4 +74,8 @@ main{
 .bell{
     width: 25px; 
     padding: 0;
+}
+section{
+    border-bottom:1px lightgray solid;
+    padding-bottom: .5em;
 }
