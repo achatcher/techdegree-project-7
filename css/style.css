@@ -1,0 +1,55 @@
+/*----- Global --------*/
+* {
+	box-sizing: border-box;
+}
+
+/*----- Type Selectors --------*/
+h3{
+    text-transform: uppercase;
+}
+h2{
+    font-size: .5em;
+}
+h1{
+    font-size: .8em;
+}
+/*----- Class Selectors --------*/
+.svg {
+   width: 45%; 
+   padding: 0;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.grid-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "nav" "main";
+}
+header{
+    grid-area: "header";
+    background-color: #7477bf;
+    display: flex;
+}
+nav{
+    grid-area: "nav";
+    background-color: #4e4c72;
+}
+main{
+    grid-area: "main";
+    background-color: white;
+}
+.profile-image{
+    border-radius: 25px;
+    height: 35px;
+    width: 35px;
+}
+/*----- ID Selectors --------*/
+.bell{
+    width: 25px; 
+    padding: 0;
+}

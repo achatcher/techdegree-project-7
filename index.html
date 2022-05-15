@@ -1,47 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Wheel of Success!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/styles.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="main-container">
-      <div id="overlay" class="start">
-        <h2 class="title">Wheel of Success</h2>
-        <a class="btn__reset">Start Game</a>
-      </div>
-
-      <div id="banner" class="section">
-        <h2 class="header">Wheel of Success</h2>
-      </div>
-
-      <div id="phrase" class="section">
-        <ul></ul>
-      </div>
-      <div id="qwerty" class="section">
-        <div class="keyrow">
-          <button>q</button><button>w</button><button>e</button><button>r</button><button>t</button><button>y</button><button>u</button><button>i</button><button>o</button><button>p</button>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>WebApp Dashboard</title>
+  <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="grid-container">
+	<header class="main-header">
+		<h1 class="headline">WebApp&trade;</h1>
+		<div class="bell-icon">
+            <img class="bell" src="svgs/bell.svg">
+            <div id="notifications"></div>
         </div>
-        <div class="keyrow">
-          <button>a</button><button>s</button><button>d</button><button>f</button><button>g</button><button>h</button><button>j</button><button>k</button><button>l</button>
+        <img src="images/member-1.jpg" class="profile-image">
+        <h2>Student Name</h2>
+	</header>
+    <nav class="main-nav">
+        <ul class="nav">
+            <li><a href="#"><img class="svg" src="svgs/home.svg"></a></li>
+            <li><a href="#"><img class="svg" src="svgs/bar-chart.svg"></a></li>
+            <li><a href="#"><img class="svg" src="svgs/members.svg"></a></li>
+            <li><a href="#"><img class="svg" src="svgs/settings.svg"></a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <div class="second-header"> 
+            <h2 class="headline">Dashboard</h2>
+            <div class="tab"></div>
         </div>
-        <div class="keyrow">
-          <button>z</button><button>x</button><button>c</button><button>v</button><button>b</button><button>n</button><button>m</button>
+        <!-- alert banner -->
+        <div class="alert" id="alert" >
+            <!-- JS will insert alert here -->
         </div>
-      </div>
-
-      <div id="scoreboard" class="section">
-        <ol>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-          <li class="tries"><img src="images/liveHeart.png" height="35px" width="30px"></li>
-        </ol>
-      </div>
-    </div>
-    <script type="text/javascript" src="app.js"></script>
-  </body>
+        <!-- line graph charts -->
+        <section class="traffic">
+            <div class="traffic-header">
+            <h3>Traffic</h3>
+            <ul class="traffic-nav">
+            <li class="traffic-nav-link">Hourly</li>
+            <li class="traffic-nav-link">Daily</li>
+            <li class="traffic-nav-link active">Weekly</li>
+            <li class="traffic-nav-link">Monthly</li>
+            </ul>
+            </div>
+            <div class="widget-container-full">
+            <!-- element line graph will attach to -->
+            <canvas id="traffic-chart"></canvas>
+            </div>
+        </section>
+        <!-- bar graph -->
+        <section class="daily">
+            <h3>Daily Traffic</h3>
+            <div class="widget-container-half">
+                <!-- element bar graph will attach to -->
+                <canvas id="daily-chart"></canvas>
+            </div>
+        </section>
+        <section class="mobile-users">
+            <h3>Mobile Users</h3>
+            <div class="widget-container-half">
+                <!-- element pie chart will attach to -->
+                <canvas id="daily-chart"></canvas>
+            </div>
+        </section>
+        <section class= "social-stats">
+            <div class="social-container">
+                <div class="social-image">
+                    <!-- embedded svg -->
+                </div>
+                <div class="social-text">
+                    <p>Facebook</p>
+                    <p>10,320</p>
+                </div>
+            </div>
+            <div class="social-container">
+                <div class="social-image">
+                    <!-- embedded svg -->
+                </div>
+                <div class="social-text">
+                    <p>Instagram</p>
+                    <p>16,445</p>
+                </div>
+            </div>
+            <div class="social-container">
+                <div class="social-image">
+                    <!-- embedded svg -->
+                </div>
+                <div class="social-text">
+                    <p>Twitter</p>
+                    <p>22,189</p>
+                </div>
+            </div>
+        </section>
+        <section class= "new-members">
+            <h3>New Members</h3>
+            <div class="members-container">
+                <img src="images/member-1.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Victoria Chambers</p>
+                    <a href="#">victoria.chambers80@example.com</a>
+                </div>
+                <p>5/15/22</p>
+            </div>
+            <div class="members-container">
+                <img src="images/member-2.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dale Byrd</p>
+                    <a href="#">dale.byrd52@example.com</a>
+                </div>
+                <p>5/15/22</p>
+            </div>
+            <div class="members-container">
+                <img src="images/member-3.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dawn Wood</p>
+                    <a href="#">dawn.wood16@example.com</a>
+                </div>
+                <p>5/15/22</p>
+            </div>
+            <div class="members-container">
+                <img src="images/member-4.jpg" class="profile-image">
+                <div class="members-text">
+                    <p>Dan Oliver</p>
+                    <a href="#">dan.oliver82@example.com</a>
+                </div>
+                <p>5/15/22</p>
+            </div>
+        </section>
+        <section class= "recent-activity">
+            <h3>Recent Activity</h3>
+            <div class="activity-container">
+                <img src="images/member-1.jpg" class="profile-image">
+                <div class="activity-text">
+                    <p>Victoria Chambers commented on <b>WebApp's SEO Tips</b></p>
+                </div>
+                <p>4 hours ago</p>
+            </div>
+            <div class="activity-container">
+                <img src="images/member-2.jpg" class="profile-image">
+                <div class="activity-text">
+                    <p>Dale Byrd like the post <b>Facebook's Changes for 2021</b></p>
+                </div>
+                <p>5 hours ago</p>
+            </div>
+            <div class="activity-container">
+                <img src="images/member-3.jpg" class="profile-image">
+                <div class="activity-text">
+                    <p>Dawn Wood commented on <b>Facebook's Changes for 2021</b></p>
+                </div>
+                <p>5 hours ago</p>
+            </div>
+            <div class="activity-container">
+                <img src="images/member-4.jpg" class="profile-image">
+                <div class="activity-text">
+                    <p>Dan Oliver posted <b>WebApp's SEO Tips</b></p>
+                </div>
+                <p>1 day ago</p>
+            </div>
+        </section>
+        <section class= "message-user">
+            <h3>Message User</h3>
+            <form class="widget-container">
+                <input type="text" placeholder="Search for user" class="form-field" id="userField">
+                <textarea placeholder="Message for user" class="form-area" id= "messageField" ></textarea>
+                <button class="button-primary" id="send" >Send</button>
+            </form>
+        </section>
+        <section class= "settings">
+            <h3>Settings</h3>
+            <!-- custom CSS toggle code-->
+            <!-- custom CSS toggle code-->
+            <select class="form-field" id="timezone">
+                <option disabled selected>Select a Timezone</option>
+                <option>Eastern</option>
+            <!-- more options -->
+            </select>
+            <div class="settings-button" >
+                <button class="button-primary" id="save">Save</button>
+                <button class="button-disabled" id="cancel">Cancel</button>
+            </div>
+        </section>
+    </main>
+</body>
 </html>
