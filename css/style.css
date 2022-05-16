@@ -47,8 +47,7 @@ p, h3{
     font-size: 20px;
 }
 #save, #cancel{
-    margin: 0 auto;
-    width: 50%;
+    width: 49%;
 }
 .social-container{
     display: flex;
@@ -58,7 +57,9 @@ p, h3{
     border-radius: 6px;
     background-color: #eeeeee;
     width: 100%;
-    margin-top: 1em;
+}
+.social-container, .form-field, .form-area, .button-primary, .button-disabled{
+    margin-top: .8em;
 }
 .traffic-nav{
     padding: 0;
@@ -99,11 +100,14 @@ nav{
     height: 50px;
     width: 50px;
 }
+.settings-button {
+    justify-content: space-between;
+}
 .profile-image{
     border-radius: 35px;
     height: 65px;
     width: 65px;
-    margin: 0 auto;
+    margin: 0 auto .25em;
 }
 /*----- ID Selectors --------*/
 .bell{
@@ -111,11 +115,11 @@ nav{
     padding: 0;
 }
 .social, .dashboard, .traffic, .daily, .mobile, .members, .activity, .message-user, .settings {
-    padding: 1em;
+    padding: .8em;
 }
 section, .members-container, .activity-container{
     border-bottom:1px lightgray solid;
-    padding: 1em;
+    padding: .8em;
 }
 
 .widget-container-full, .widget-container-half {
@@ -124,7 +128,10 @@ section, .members-container, .activity-container{
 .members-container, .activity-container{
     text-align: center;
 }
-
+.last{
+    border: none;
+    padding-bottom: 0;
+}
 @media (min-width: 768px) {
     .grid-container{
         grid-template-columns: 7vw 1fr;
@@ -160,7 +167,7 @@ section, .members-container, .activity-container{
     .nav{
         flex-direction: column;
     }
-    .traffic, .social, .members, .activity, .message, .settings {
+    .traffic, .social, .members, .activity, .message-user, .settings {
         grid-column: 1 / span 2;
     }
     .daily {
@@ -183,7 +190,7 @@ section, .members-container, .activity-container{
     .traffic, .social {
         grid-column: 1 / span 2;
     }
-    .daily, .members, .message {
+    .daily, .members, .message-user {
         grid-column: 1 / span 1;
     }
     .mobile, .activity, .settings {
