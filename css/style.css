@@ -49,7 +49,7 @@ a{
 .social-text p{
     color: #7477bf;
 }
-.nav, .traffic-nav, .settings-button{
+.nav, .traffic-nav{
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -76,7 +76,7 @@ a{
     color: black;
 }
 .dashboard{
-    font-size: 20px;
+    font-size: 19px;
 }
 #save, #cancel{
     width: 49%;
@@ -127,7 +127,9 @@ a{
     width: 50px;
     margin: 0 10px;
 }
-.settings-button {
+.settings-button,.second-header {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 .profile-image{
@@ -136,7 +138,6 @@ a{
     width: 65px;
     margin: 0 auto .25em;
 }
-/*----- ID Selectors --------*/
 .bell{
     width: 25px; 
     padding: 0;
@@ -180,6 +181,21 @@ button {
 }
 .button-disabled{
     background-color: grey;
+}
+.alert-banner{
+    display: flex;
+    background-color: #7477bf;
+    justify-content: space-between;
+    color: white;
+    border-radius: 6px;
+    padding: .75em;
+    margin: .8em;
+}
+.tab{
+    width: 90%;
+    height: 50px;
+    background-color: whitesmoke;
+    border: 1px solid lightgray;
 }
 @media (min-width: 768px) {
     .grid-container{
@@ -230,7 +246,7 @@ button {
     .svg-container{
         margin: .5em auto;
     }
-    .traffic, .social, .members, .activity, .message-user, .settings {
+    .traffic, .social, .members, .activity, .message-user, .settings, .alert, .second-header {
         grid-column: 1 / span 2;
     }
     .daily {
