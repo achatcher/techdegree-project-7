@@ -10,21 +10,44 @@ h3{
     font-size: small;
 }
 h2{
-    font-size: .5em;
+    font-size: .8em;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 h1{
     font-size: .8em;
 }
-.social-text{
-    margin: 1em 0;
-}
 p, h3{
     margin: 0;
 }
+header{
+    grid-area: header;
+    background-color: #7477bf;
+    display: flex;
+    padding: .5em;
+    color: white;
+}
+svg, .bell {
+    fill: white;
+}
+nav{
+    grid-area: nav;
+    background-color: #4e4c72;
+}
+ul{
+    padding: 0;
+    margin: .5em auto;
+}
+a{
+    color: #7477bf;
+    text-decoration: none;
+}
 /*----- Class Selectors --------*/
-.svg {
-   width: 45%; 
-   padding: 0;
+.social-text p{
+    color: #7477bf;
 }
 .nav, .traffic-nav, .settings-button{
     display: flex;
@@ -35,13 +58,22 @@ p, h3{
     display: flex;
     flex-direction: column;
 }
+.svg-container{
+    width: 33px;
+    height: 33px;
+    margin: auto .8em;
+}
+.social-text{
+    margin: 1em 0;
+}
 .social-image{
     margin: auto 1em;
     width: 65px;
     height: 65px;
 }
-.social-number{
+#social-number{
     font-size: 40px;
+    color: black;
 }
 .dashboard{
     font-size: 20px;
@@ -55,17 +87,21 @@ p, h3{
     justify-content: flex-start;
     border: 1px solid lightgray;
     border-radius: 6px;
-    background-color: #eeeeee;
+    background-color: whitesmoke;
     width: 100%;
+    align-items: center;
 }
 .social-container, .form-field, .form-area, .button-primary, .button-disabled{
     margin-top: .8em;
 }
-.traffic-nav{
+.traffic-nav {
     padding: 0;
     margin: 1em auto;
 }
-a{
+.nav{
+    justify-content: center;
+}
+.traffic-nav-link{
     text-decoration: none;
     padding: 0 .5em;
 }
@@ -75,16 +111,6 @@ a{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: "header" "nav" "main";
-}
-header{
-    grid-area: header;
-    background-color: #7477bf;
-    display: flex;
-    padding: .5em;
-}
-nav{
-    grid-area: nav;
-    background-color: #4e4c72;
 }
 .main{
     grid-area: main;
@@ -99,6 +125,7 @@ nav{
     border-radius: 25px;
     height: 50px;
     width: 50px;
+    margin: 0 10px;
 }
 .settings-button {
     justify-content: space-between;
@@ -113,6 +140,9 @@ nav{
 .bell{
     width: 25px; 
     padding: 0;
+}
+.dashboard{
+    margin: 0;
 }
 .social, .dashboard, .traffic, .daily, .mobile, .members, .activity, .message-user, .settings {
     padding: .8em;
@@ -132,6 +162,25 @@ section, .members-container, .activity-container{
     border: none;
     padding-bottom: 0;
 }
+button {
+    background-color: #7477bf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: .75em 0;
+}
+.form-field, .form-area {
+    border-radius: 6px;
+    background-color: whitesmoke;
+    border: lightgray 1px solid;
+    padding: .75em;
+}
+.form-area{
+    min-height: 150px;
+}
+.button-disabled{
+    background-color: grey;
+}
 @media (min-width: 768px) {
     .grid-container{
         grid-template-columns: 7vw 1fr;
@@ -139,9 +188,19 @@ section, .members-container, .activity-container{
         "header header"
         "nav main";
     }
+    .members-text, .members-info, .activity-text{
+        display: flex;
+    }
     .members-container, .activity-container{
-        height: 125px;
-      }
+        flex-direction: row;
+        align-items: center;
+    }
+    .activity-text, .members-text{
+        margin-left: .8em;
+    }
+    .members-info, .activity-text{
+        flex-direction: column;
+    }
     .main {
         grid-template-columns: 50%;
     }
@@ -154,6 +213,7 @@ section, .members-container, .activity-container{
     h3{
         margin-right: auto;
     }
+
     .media-wrapper{
         flex-direction: row;
         justify-content: space-around;
@@ -166,6 +226,9 @@ section, .members-container, .activity-container{
     }
     .nav{
         flex-direction: column;
+    }
+    .svg-container{
+        margin: .5em auto;
     }
     .traffic, .social, .members, .activity, .message-user, .settings {
         grid-column: 1 / span 2;
@@ -185,6 +248,12 @@ section, .members-container, .activity-container{
     .social-container {
         width: 30vw;
     }
+    nav{
+        max-width: 66px;
+    }
+    section{
+        border-right:1px lightgray solid;
+    }
 }
 @media (min-width: 1024px) {
     .traffic, .social {
@@ -195,5 +264,8 @@ section, .members-container, .activity-container{
     }
     .mobile, .activity, .settings {
         grid-column: 2 / span 1;
+    }
+    .members-container, .activity-container{
+        height: 100px;
     }
 }
