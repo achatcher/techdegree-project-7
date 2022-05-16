@@ -1,13 +1,12 @@
 /*----- Global --------*/
 * {
 	box-sizing: border-box;
+    line-height: 1.1;
 }
 
 /*----- Type Selectors --------*/
 h3{
     text-transform: uppercase;
-    padding: 0 1em;
-    margin: 1em 0 .25em;
     font-size: small;
 }
 h2{
@@ -16,73 +15,178 @@ h2{
 h1{
     font-size: .8em;
 }
+.social-text{
+    margin: 1em 0;
+}
+p, h3{
+    margin: 0;
+}
 /*----- Class Selectors --------*/
 .svg {
    width: 45%; 
    padding: 0;
 }
-.nav, .traffic-nav{
+.nav, .traffic-nav, .settings-button{
     display: flex;
     flex-direction: row;
     list-style: none;
 }
-.social-stats{
+.media-wrapper, .members-container, .activity-container, .traffic-header, .message-user, form, .settings{
     display: flex;
     flex-direction: column;
 }
 .social-image{
-    margin: 1em;
+    margin: auto 1em;
+    width: 65px;
+    height: 65px;
+}
+.social-number{
+    font-size: 40px;
+}
+.dashboard{
+    font-size: 20px;
+}
+#save, #cancel{
+    margin: 0 auto;
+    width: 50%;
 }
 .social-container{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     border: 1px solid lightgray;
+    border-radius: 6px;
     background-color: #eeeeee;
-    margin: .5em 1em;
+    width: 100%;
+    margin-top: 1em;
 }
 .traffic-nav{
     padding: 0;
+    margin: 1em auto;
 }
 a{
     text-decoration: none;
+    padding: 0 .5em;
 }
-.traffic-nav li{
-    margin: 0 auto;
-}
+
 .grid-container{
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: "header" "nav" "main";
 }
 header{
-    grid-area: "header";
+    grid-area: header;
     background-color: #7477bf;
     display: flex;
+    padding: .5em;
 }
 nav{
-    grid-area: "nav";
+    grid-area: nav;
     background-color: #4e4c72;
 }
-main{
-    grid-area: "main";
+.main{
+    grid-area: main;
     background-color: white;
+    display: grid;
 }
 .headline{
     margin-right: auto;
+    font-size: 20px;
+}
+.main-image{
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
 }
 .profile-image{
-    border-radius: 25px;
-    height: 35px;
-    width: 35px;
+    border-radius: 35px;
+    height: 65px;
+    width: 65px;
+    margin: 0 auto;
 }
 /*----- ID Selectors --------*/
 .bell{
     width: 25px; 
     padding: 0;
 }
-section{
+.social, .dashboard, .traffic, .daily, .mobile, .members, .activity, .message-user, .settings {
+    padding: 1em;
+}
+section, .members-container, .activity-container{
     border-bottom:1px lightgray solid;
-    padding-bottom: .5em;
+    padding: 1em;
+}
+
+.widget-container-full, .widget-container-half {
+    width: 95vw;
+}
+.members-container, .activity-container{
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .grid-container{
+        grid-template-columns: 7vw 1fr;
+        grid-template-areas: 
+        "header header"
+        "nav main";
+    }
+    .members-container, .activity-container{
+        height: 125px;
+      }
+    .main {
+        grid-template-columns: 50%;
+    }
+    .traffic-header{
+        flex-direction: row; 
+    }
+    .traffic-header ul{
+        margin: 0; 
+    }
+    h3{
+        margin-right: auto;
+    }
+    .media-wrapper{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .members-container, .activity-container{
+        text-align: left;
+    }
+    .profile-image{
+        margin: 0;
+    }
+    .nav{
+        flex-direction: column;
+    }
+    .traffic, .social, .members, .activity, .message, .settings {
+        grid-column: 1 / span 2;
+    }
+    .daily {
+        grid-column: 1 / span 1;
+    }
+    .mobile {
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full {
+        width: 90vw;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+    .social-container {
+        width: 30vw;
+    }
+}
+@media (min-width: 1024px) {
+    .traffic, .social {
+        grid-column: 1 / span 2;
+    }
+    .daily, .members, .message {
+        grid-column: 1 / span 1;
+    }
+    .mobile, .activity, .settings {
+        grid-column: 2 / span 1;
+    }
 }
