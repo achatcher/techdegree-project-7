@@ -5,10 +5,6 @@
 }
 
 /*----- Type Selectors --------*/
-h3{
-    text-transform: uppercase;
-    font-size: small;
-}
 h2{
     font-size: .8em;
 }
@@ -49,14 +45,20 @@ a{
 .social-text p{
     color: #7477bf;
 }
-.nav, .traffic-nav{
+.nav, .traffic-nav, .settings-button, .second-header{
     display: flex;
     flex-direction: row;
     list-style: none;
 }
-.media-wrapper, .members-container, .activity-container, .traffic-header, .message-user, form, .settings{
+.media-wrapper, .members-container, .activity-container, .traffic-header, .message-user, form, .settings, .lower-form{
     display: flex;
     flex-direction: column;
+}
+.settings-button{
+    justify-content: space-between;
+}
+.lower-form{
+    margin-top: auto;
 }
 .svg-container{
     width: 33px;
@@ -79,7 +81,7 @@ a{
     font-size: 19px;
 }
 #save, #cancel{
-    width: 49%;
+    width: 48%;
 }
 .social-container{
     display: flex;
@@ -127,7 +129,7 @@ a{
     width: 50px;
     margin: 0 10px;
 }
-.settings-button,.second-header {
+.settings-button,.second-header,{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -197,6 +199,35 @@ button {
     background-color: whitesmoke;
     border: 1px solid lightgray;
 }
+#mobile-chart, #daily-chart, #traffic-chart{
+    margin: 1em .5em;
+}
+h3{
+    text-transform: uppercase;
+    font-size: small;
+    margin: .5em 0 2em;
+}
+#social{
+    margin: 0;
+}
+.switch-light{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+.switch-light p{
+    margin-right: auto;
+}
+.switch-ios.switch-light > span{
+    width: 100px;
+}
+.switch-ios.switch-light input:checked ~ span {
+    border-color: #8e8adb;
+    box-shadow: inset 0 0 0 30px #8e8adb;
+}
+.switch-ios.switch-light input:checked ~ span a {
+border-color: #8e8adb;
+}
 @media (min-width: 768px) {
     .grid-container{
         grid-template-columns: 7vw 1fr;
@@ -206,6 +237,10 @@ button {
     }
     .members-text, .members-info, .activity-text{
         display: flex;
+    }
+    .members-text{
+        width: 90%;
+        justify-content: space-between;
     }
     .members-container, .activity-container{
         flex-direction: row;
