@@ -12,6 +12,8 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
+
+
 // ------------------ Traffic Line Graph -------------------//
 const trafficCanvas = document.getElementById('traffic-chart');
 let trafficData = {
@@ -128,3 +130,10 @@ send.addEventListener('click', () => {
     alert(`Message successfully sent to: ${user.value}`);
     }
 });
+
+const updateChart = (chart, newData) => {
+    chart.data.labels = newData.labels;
+    chart.data.datasets[0].data = newData.datasets[0].data;
+    chart.update();
+};
+

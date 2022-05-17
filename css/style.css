@@ -26,7 +26,7 @@ header{
     padding: .5em;
     color: white;
 }
-svg, .bell {
+svg {
     fill: white;
 }
 nav{
@@ -93,6 +93,9 @@ a{
     width: 100%;
     align-items: center;
 }
+#bell-button{
+    width: 30px;
+}
 .social-container, .form-field, .form-area, .button-primary, .button-disabled{
     margin-top: .8em;
 }
@@ -107,7 +110,14 @@ a{
     text-decoration: none;
     padding: 0 .5em;
 }
-
+#notifications {
+    background-color: #b8ef1b;
+    border-radius: 360px;
+    height: 7px;
+    width: 7px;
+    margin-left: 2em;
+    margin-right: .5em;
+  }
 .grid-container{
     display: grid;
     grid-template-columns: 1fr;
@@ -129,7 +139,7 @@ a{
     width: 50px;
     margin: 0 10px;
 }
-.settings-button,.second-header,{
+.settings-button,.second-header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -143,6 +153,14 @@ a{
 .bell{
     width: 25px; 
     padding: 0;
+}
+.bell{
+    width: 35px; 
+    padding: 0;
+}
+.bell-icon {
+    border-right:1px lightgray solid;
+    margin-right: .25em;
 }
 .dashboard{
     margin: 0;
@@ -227,6 +245,9 @@ h3{
 }
 .switch-ios.switch-light input:checked ~ span a {
 border-color: #8e8adb;
+}
+svg:hover{
+    fill: limegreen;
 }
 @media (min-width: 768px) {
     .grid-container{
