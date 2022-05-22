@@ -5,6 +5,9 @@
 }
 
 /*----- Type Selectors --------*/
+body{
+    font-family: "Bitter", "Helvetica", Helvetica, Arial, sans-serif;
+}
 .sticky {
     position: fixed;
 }
@@ -82,6 +85,7 @@ a{
 }
 .dashboard{
     font-size: 19px;
+    margin-right: auto;
 }
 #save, #cancel{
     width: 48%;
@@ -114,7 +118,7 @@ a{
     padding: 0 .5em;
 }
 #notifications {
-    background-color: #b8ef1b;
+    background-color: limegreen;
     border-radius: 360px;
     height: 7px;
     width: 7px;
@@ -124,6 +128,7 @@ a{
 }
 .grid-container{
     display: grid;
+    width: 100vw;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: "header" "nav" "main";
@@ -136,6 +141,8 @@ a{
 .headline{
     margin-right: auto;
     font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20.5px;
 }
 .main-image{
     border-radius: 25px;
@@ -143,10 +150,14 @@ a{
     width: 50px;
     margin: 0 10px;
 }
-.settings-button,.second-header{
+.settings-button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.second-header{
+    display: flex;
+    flex-direction: row;
 }
 .profile-image{
     border-radius: 35px;
@@ -215,6 +226,9 @@ button {
     padding: .75em;
     margin: .8em;
 }
+.alert-banner-close, .message-close{
+    padding: 0;
+}
 header{
     position: sticky;
     top: 0;
@@ -259,17 +273,25 @@ h3{
 .switch-ios.switch-light input:checked ~ span a {
 border-color: #8e8adb;
 }
-.hover:hover{
-    fill: limegreen;
+.bell-path, .hover, .message{
+   transition: .35s ease-in; 
 }
-
+.hover:hover{
+    fill: black;
+}
+.bell-icon:hover .bell-path{
+    fill: black !important;
+}
 .dropdown-content {
     display: none;
-    position: absolute;
+    font-size: 13px;
+    margin-top: 55px;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 30;
+    position: absolute;
+    right: 25px;
   }
   
   .dropdown-content a {
@@ -281,13 +303,28 @@ border-color: #8e8adb;
     text-align: left;
   }
   
-  .dropdown-content a:hover {
+  .message:hover {
     background-color: #ddd;
   }
   
   .show {
     display: block;
   }
+  .text-input {
+    display: none;
+  }
+.message{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid lightgrey;
+}
+.message-close{
+    color: black;
+    background-color: transparent;
+    padding-right: 10px;
+    margin-left: auto;
+}
+
 @media (min-width: 768px) {
     .grid-container{
         grid-template-columns: 7fr 1fr;
@@ -366,6 +403,27 @@ border-color: #8e8adb;
     }
     section{
         border-right:1px lightgray solid;
+    }
+    .text-input {
+        display: inline;
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        font: "Bitter", "Helvetica", Helvetica, Arial, sans-serif;
+        height: 30px;
+        line-height: 50px;
+        padding: 20px;
+        width: 350px;
+        max-width: 600px;
+        margin-top: 2.63px;
+        margin-left: auto;
+        margin-right: 10px;
+        top: 1px;
+        transition: box-shadow 150ms ease-in-out; }
+        .text-input:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px #7477bf inset; }
+    .switch-toggle{
+        width: 300px;
     }
 }
 @media (min-width: 1024px) {

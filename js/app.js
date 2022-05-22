@@ -5,7 +5,7 @@ const alertBanner = document.getElementById("alert");
 alertBanner.innerHTML = 
 `<div class="alert-banner">
     <p><strong>Alert:</strong> You have <strong>4</strong> unread messages</p>
-    <p class="alert-banner-close">x</p>
+    <button class="alert-banner-close">x</button>
 </div>`;
 alertBanner.addEventListener('click', e => {
     const element = e.target;
@@ -171,10 +171,14 @@ send.addEventListener('click', () => {
 const notifications = document.getElementById("notifications");
 notifications.innerHTML = 
 `<div id="myDropdown" class="dropdown-content">
-    <a href="#">Message 1</a>
-    <a href="#">Message 2</a>
-    <a href="#">Message 3</a>
-    <a href="#">Message 4</a>
+    <div class="message">
+        <a href="#">You have 4 unread messages</a>
+        <button class="message-close">x</button>
+    </div>
+    <div class="message">
+        <a href="#">You have 3 new followers</a>
+        <button class="message-close">x</button>
+    </div>
 </div>`;
 
 // Get the button, and when the user clicks on it, execute getNotifications
@@ -185,4 +189,3 @@ function getNotifications() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
   
-// ------------------ FILTER ----------------------------//
