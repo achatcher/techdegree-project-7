@@ -1,3 +1,5 @@
+
+
 // ------------------ ALERT BANNER -------------------//
 const alertBanner = document.getElementById("alert");
 alertBanner.innerHTML = 
@@ -16,12 +18,42 @@ alertBanner.addEventListener('click', e => {
 
 // ------------------ Traffic Line Graph -------------------//
 const trafficCanvas = document.getElementById('traffic-chart');
-let trafficData = {
+let monthlyTrafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
     "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
     data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
     2500],
+    backgroundColor: 'rgba(116, 119, 191, .3)',
+    borderWidth: 1,
+    }]
+};
+let hourlyTrafficData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+    "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
+    data: [250, 1050, 800, 1800, 1300, 1550, 1050, 1650, 2050, 1300,
+    2300],
+    backgroundColor: 'rgba(116, 119, 191, .3)',
+    borderWidth: 1,
+    }]
+};
+let dailyTrafficData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+    "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
+    data: [950, 1450, 1200, 2200, 1700, 1950, 1450, 2050, 2450, 1700,
+    2500],
+    backgroundColor: 'rgba(116, 119, 191, .3)',
+    borderWidth: 1,
+    }]
+};
+let weeklyTrafficData = {
+    labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
+    "4-10", "11-17", "18-24", "25-31"],
+    datasets: [{
+    data: [475, 550, 1000, 800, 1400, 1760, 1250, 850, 450, 700,
+    1200],
     backgroundColor: 'rgba(116, 119, 191, .3)',
     borderWidth: 1,
     }]
@@ -47,10 +79,15 @@ let trafficOptions = {
 
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: monthlyTrafficData,
     options: trafficOptions
 });
 
+const updateChart = (trafficChart, newData) => {
+    trafficChart.data.labels = newData.labels;
+    trafficChart.data.datasets[0].data = newData.datasets[0].data;
+    trafficChart.update();
+};
 // ------------------ Daily Traffic Bar Graph -------------------//
 const dailyCanvas = document.getElementById("daily-chart");
 const dailyData = {
@@ -79,7 +116,6 @@ let dailyChart = new Chart(dailyCanvas, {
     data: dailyData,
     options: dailyOptions
 });
-
 // ------------------ Mobile Users Donut Graph -------------------//
 const mobileCanvas = document.getElementById("mobile-chart");
 const mobileData = {
@@ -131,9 +167,22 @@ send.addEventListener('click', () => {
     }
 });
 
-const updateChart = (chart, newData) => {
-    chart.data.labels = newData.labels;
-    chart.data.datasets[0].data = newData.datasets[0].data;
-    chart.update();
-};
+// ------------------ NOTIFICATIONS -------------------//
+const notifications = document.getElementById("notifications");
+notifications.innerHTML = 
+`<div id="myDropdown" class="dropdown-content">
+    <a href="#">Message 1</a>
+    <a href="#">Message 2</a>
+    <a href="#">Message 3</a>
+    <a href="#">Message 4</a>
+</div>`;
 
+// Get the button, and when the user clicks on it, execute getNotifications
+document.querySelector(".bell-icon").onclick = function() {getNotifications()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function getNotifications() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+  
+// ------------------ FILTER ----------------------------//

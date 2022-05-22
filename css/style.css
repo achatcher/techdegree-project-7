@@ -5,6 +5,9 @@
 }
 
 /*----- Type Selectors --------*/
+.sticky {
+    position: fixed;
+}
 h2{
     font-size: .8em;
 }
@@ -115,9 +118,10 @@ a{
     border-radius: 360px;
     height: 7px;
     width: 7px;
-    margin-left: 2em;
+    z-index: 20;
+    margin-left: 1.5em;
     margin-right: .5em;
-  }
+}
 .grid-container{
     display: grid;
     grid-template-columns: 1fr;
@@ -211,6 +215,15 @@ button {
     padding: .75em;
     margin: .8em;
 }
+header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+nav{
+    position: sticky;
+    top: 83px;
+}
 .tab{
     width: 90%;
     height: 50px;
@@ -246,12 +259,38 @@ h3{
 .switch-ios.switch-light input:checked ~ span a {
 border-color: #8e8adb;
 }
-svg:hover{
+.hover:hover{
     fill: limegreen;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 30;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
 @media (min-width: 768px) {
     .grid-container{
-        grid-template-columns: 7vw 1fr;
+        grid-template-columns: 7fr 1fr;
         grid-template-areas: 
         "header header"
         "nav main";
@@ -298,6 +337,11 @@ svg:hover{
     }
     .nav{
         flex-direction: column;
+        position: fixed;
+        padding: 15px;
+    }
+    nav{
+        width: 70px;
     }
     .svg-container{
         margin: .5em auto;
@@ -319,9 +363,6 @@ svg:hover{
     }
     .social-container {
         width: 30vw;
-    }
-    nav{
-        max-width: 66px;
     }
     section{
         border-right:1px lightgray solid;
