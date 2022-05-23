@@ -87,13 +87,12 @@ header {
 .dropdown-content {
     display: none;
     font-size: 13px;
-    margin-top: 55px;
+    margin-top: 40px;
     background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 55;
     position: absolute;
-    right: 25px;
+    right: 2px;
 }
   
 .dropdown-content a {
@@ -102,6 +101,22 @@ header {
     text-decoration: none;
     display: block;
     text-align: left;
+}
+.message{
+    height: 50px;
+    min-width: 200px;
+    align-items: center;
+    border-bottom:1px lightgray solid;
+}
+.message:hover {
+    background-color: #ddd;
+}
+.message-close{
+    margin: 5px 5px 5px auto; 
+    padding: 10px !important;
+}
+.show {
+    display: block;
 }
 /*-------------------------- NAV STYLING --------------------------*/
 nav{
@@ -249,6 +264,7 @@ section, .members-container, .activity-container{
     min-height: 150px;
 }
 button {
+    cursor: pointer;
     background-color: #7477bf;
     color: white;
     border: none;
@@ -314,7 +330,7 @@ svg {
     display: flex;
     flex-direction: column;
 }
-.nav, .traffic-nav, .settings-button, .second-header, .social-container, .main-nav{
+.nav, .traffic-nav, .settings-button, .second-header, .social-container, .main-nav, .message{
     display: flex;
     flex-direction: row;
 }
