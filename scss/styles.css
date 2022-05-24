@@ -456,6 +456,7 @@ button {
   border-color: #7477bf;
 }
 
+/*---------------- Traffic Time Options --------------*/
 /*-------------------------- Input --------------------------*/
 .form-field, .form-area {
   border-radius: 6px;
@@ -798,7 +799,7 @@ nav {
 }
 
 .switch-toggle {
-  max-width: 300px;
+  width: 350px;
   margin: 0 auto;
 }
 

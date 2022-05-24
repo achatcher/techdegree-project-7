@@ -17,6 +17,7 @@ alertBanner.addEventListener('click', e => {
 
 
 // ------------------ Traffic Line Graph -------------------//
+
 const trafficCanvas = document.getElementById('traffic-chart');
 let monthlyTrafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
@@ -82,12 +83,6 @@ let trafficChart = new Chart(trafficCanvas, {
     data: monthlyTrafficData,
     options: trafficOptions
 });
-
-const updateChart = (trafficChart, newData) => {
-    trafficChart.data.labels = newData.labels;
-    trafficChart.data.datasets[0].data = newData.datasets[0].data;
-    trafficChart.update();
-};
 // ------------------ Daily Traffic Bar Graph -------------------//
 const dailyCanvas = document.getElementById("daily-chart");
 const dailyData = {
@@ -170,7 +165,7 @@ send.addEventListener('click', () => {
   
 //_______________________________________EXCEEDS EXPECTATION _______________________________________//
 
-// ------------------ NOTIFICATIONS -------------------//
+// ------------------------------------------- NOTIFICATIONS -------------------//
 const notifications = document.getElementById("notifications");
 notifications.innerHTML = 
 `<div id="myDropdown" class="dropdown-content">
@@ -193,44 +188,29 @@ function getNotifications() {
 }
 
 
-// ------------------ SEARCH AUTOCOMPLETE -------------------//
+// ------------------------------------- SEARCH AUTOCOMPLETE -------------------//
 
 var members = ["Dan Oliver","Dawn Wood","Victoria Chambers","Dale Byrd"];
 
 function autocomplete(inp, arr) {
-    /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
     var currentFocus;
-    /*execute a function when someone writes in the text field:*/
     inp.addEventListener("input", function(e) {
         var a, b, i, val = this.value;
-        /*close any already open lists of autocompleted values*/
         closeAllLists();
         if (!val) { return false;}
         currentFocus = -1;
-        /*create a DIV element that will contain the items (values):*/
         a = document.createElement("DIV");
         a.setAttribute("id", this.id + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
-        /*append the DIV element as a child of the autocomplete container:*/
         this.parentNode.appendChild(a);
-        /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
-          /*check if the item starts with the same letters as the text field value:*/
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-            /*create a DIV element for each matching element:*/
             b = document.createElement("DIV");
-            /*make the matching letters bold:*/
             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);
-            /*insert a input field that will hold the current array item's value:*/
             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-            /*execute a function when someone clicks on the item value (DIV element):*/
                 b.addEventListener("click", function(e) {
-                /*insert the value for the autocomplete text field:*/
                 inp.value = this.getElementsByTagName("input")[0].value;
-                /*close the list of autocompleted values,
-                (or any other open lists of autocompleted values:*/
                 closeAllLists();
             });
             a.appendChild(b);
@@ -242,45 +222,31 @@ function autocomplete(inp, arr) {
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
         if (e.keyCode == 40) {
-          /*If the arrow DOWN key is pressed,
-          increase the currentFocus variable:*/
           currentFocus++;
-          /*and and make the current item more visible:*/
           addActive(x);
-        } else if (e.keyCode == 38) { //up
-          /*If the arrow UP key is pressed,
-          decrease the currentFocus variable:*/
+        } else if (e.keyCode == 38) { 
           currentFocus--;
-          /*and and make the current item more visible:*/
           addActive(x);
         } else if (e.keyCode == 13) {
-          /*If the ENTER key is pressed, prevent the form from being submitted,*/
           e.preventDefault();
           if (currentFocus > -1) {
-            /*and simulate a click on the "active" item:*/
             if (x) x[currentFocus].click();
           }
         }
     });
     function addActive(x) {
-      /*a function to classify an item as "active":*/
       if (!x) return false;
-      /*start by removing the "active" class on all items:*/
       removeActive(x);
       if (currentFocus >= x.length) currentFocus = 0;
       if (currentFocus < 0) currentFocus = (x.length - 1);
-      /*add class "autocomplete-active":*/
       x[currentFocus].classList.add("autocomplete-active");
     }
     function removeActive(x) {
-      /*a function to remove the "active" class from all autocomplete items:*/
       for (var i = 0; i < x.length; i++) {
         x[i].classList.remove("autocomplete-active");
       }
     }
     function closeAllLists(elmnt) {
-      /*close all autocomplete lists in the document,
-      except the one passed as an argument:*/
       var x = document.getElementsByClassName("autocomplete-items");
       for (var i = 0; i < x.length; i++) {
         if (elmnt != x[i] && elmnt != inp) {
@@ -293,4 +259,43 @@ function autocomplete(inp, arr) {
       closeAllLists(e.target);
   });
   }
+
+// ------------------------------------- LOCAL STORAGE -------------------//
+
+
+
+
+
   
+// ------------------------------------- CHART UPDATE-------------------//
+ 
+// let monthlyTrafficData = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
+
+// let hourlyTrafficData = [250, 1050, 800, 1800, 1300, 1550, 1050, 1650, 2050, 1300,2300];
+
+// let dailyTrafficData = [950, 1450, 1200, 2200, 1700, 1950, 1450, 2050, 2450, 1700, 2500];
+
+// let weeklyTrafficData = [475, 550, 1000, 800, 1400, 1760, 1250, 850, 450, 700, 1200];
+
+// function updateChart(chart, newData) {
+//     chart.data.datasets[0].data = newData;
+//     chart.update();
+// };  
+
+// const btnContainer = document.querySelector(".switch-toggle");
+// const navBtns = document.getElementsByClassName("traffic-nav");
+
+// btnContainer.addEventListener("click", (e) => {
+//     const element = e.target;
+
+//     if (element.classList.contains('hourly')) {
+//         updateChart(trafficChart, hourlyTrafficData);
+//     } else if (element.classList.contains('daily')) {
+//         updateChart(trafficChart, dailyTrafficData);
+//     } else if (element.classList.contains('weekly')) {
+//         updateChart(trafficChart, weeklyTrafficData);
+//     } else if (element.classList.contains('monthly')) {
+//         updateChart(trafficChart, monthlyTrafficData);
+//     }
+// });
+

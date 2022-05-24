@@ -21,7 +21,7 @@
                     </svg>
                 </button>
             </div>
-            <img src="images/member-1.jpg" class="main-image">
+            <img src="images/member-1.jpg" class="main-image" alt="Members profile picture">
             <h2 class="headline">Abby Hatcher</h2>
         </div>
 	</header>
@@ -68,17 +68,17 @@
             <div class="traffic-header">
                 <h3 class="margin-l">Traffic</h3>
                 <div class="switch-toggle">
-                    <input id="hour" class="traffic-nav" name="view" type="radio" checked>
-                    <label for="hour" onclick="">Hourly</label>
+                    <input id="hour" class="traffic-nav hourly" name="view" type="radio" checked>
+                    <label id="hourly" for="hour" onclick="">Hourly</label>
                   
-                    <input id="day" class="traffic-nav" name="view" type="radio">
-                    <label for="day" onclick="">Daily</label>
+                    <input id="day" class="traffic-nav daily" name="view" type="radio">
+                    <label id="daily" for="day" onclick="">Daily</label>
                   
-                    <input id="week" class="traffic-nav" name="view" type="radio">
-                    <label for="week" onclick="">Weekly</label>
+                    <input id="week" class="traffic-nav weekly" name="view" type="radio">
+                    <label id="weekly" for="week" onclick="">Weekly</label>
                   
-                    <input id="month" class="traffic-nav" name="view" type="radio">
-                    <label for="month" onclick="">Monthly</label>
+                    <input id="month" class="traffic-nav monthly" name="view" type="radio" autofocus>
+                    <label id="monthly" for="month" onclick="">Monthly</label>
                     <a></a>
                   </div>
             </div>
@@ -146,7 +146,7 @@
         <section class= "members">
             <h3>New Members</h3>
             <div class="members-container">
-                <img src="images/member-1.jpg" class="profile-image">
+                <img src="images/member-1.jpg" class="profile-image" alt="Members profile picture">
                 <div class="members-text">
                     <div class="members-info pad-b">
                         <p>Victoria Chambers</p>
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="members-container">
-                <img src="images/member-2.jpg" class="profile-image">
+                <img src="images/member-2.jpg" class="profile-image" alt="Members profile picture">
                 <div class="members-text">
                     <div class="members-info pad-b">
                         <p>Dale Byrd</p>
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div class="members-container">
-                <img src="images/member-3.jpg" class="profile-image">
+                <img src="images/member-3.jpg" class="profile-image" alt="Members profile picture">
                 <div class="members-text pad-b">
                     <div class="members-info">
                         <p>Dawn Wood</p>
@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="members-container last">
-                <img src="images/member-4.jpg" class="profile-image">
+                <img src="images/member-4.jpg" class="profile-image" alt="Members profile picture">
                 <div class="members-text pad-b">
                     <div class="members-info">
                         <p>Dan Oliver</p>
@@ -189,7 +189,7 @@
         <section class= "activity">
             <h3>Recent Activity</h3>
             <div class="activity-container">
-                <img src="images/member-1.jpg" class="profile-image">
+                <img src="images/member-1.jpg" class="profile-image" alt="Members profile picture">
                 <div class="activity-text">
                     <p class="pad-b">Victoria Chambers commented on <b>WebApp's SEO Tips</b></p>
                     <p>4 hours ago</p>
@@ -197,7 +197,7 @@
                 <p class="hide">></p>
             </div>
             <div class="activity-container">
-                <img src="images/member-2.jpg" class="profile-image">
+                <img src="images/member-2.jpg" class="profile-image" alt="Members profile picture">
                 <div class="activity-text">
                     <p class="pad-b">Dale Byrd like the post <b>Facebook's Changes for 2021</b></p>
                     <p>5 hours ago</p>
@@ -205,7 +205,7 @@
                 <p class="hide">></p>
             </div>
             <div class="activity-container">
-                <img src="images/member-3.jpg" class="profile-image">
+                <img src="images/member-3.jpg" class="profile-image" alt="Members profile picture">
                 <div class="activity-text">
                     <p>Dawn Wood commented on <b>Facebook's Changes for 2021</b></p>
                     <p>5 hours ago</p>
@@ -213,7 +213,7 @@
                 <p class="hide">></p>
             </div>
             <div class="activity-container last">
-                <img src="images/member-4.jpg" class="profile-image">
+                <img src="images/member-4.jpg" class="profile-image" alt="Members profile picture">
                 <div class="activity-text">
                     <p>Dan Oliver posted <b>WebApp's SEO Tips</b></p>
                     <p>1 day ago</p>
@@ -234,7 +234,7 @@
         <section class= "settings" id="settings">
             <h3>Settings</h3>
             <div class="upper-form">
-                <label class="switch-light switch-ios" onclick="">
+                <label class="switch-light switch-ios" id="toggle1" onclick="">
                     <input type="checkbox">
                     <p>Send Email Notifications</p>
                     <span>
@@ -243,7 +243,7 @@
                     <a></a>
                     </span>
                 </label>
-                <label class="switch-light switch-ios" onclick="">
+                <label class="switch-light switch-ios" id="toggle2" onclick="">
                     <input type="checkbox">
                     <p>Set Profile to Public</p>
                     <span>

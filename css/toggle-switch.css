@@ -144,13 +144,6 @@
       /* breathing room for bootstrap/foundation classes.
      */
       line-height: 2em; }
-    .switch-toggle input:focus ~ span a,
-    .switch-toggle input:focus + label {
-      outline-width: 2px;
-      outline-style: solid;
-      outline-color: Highlight;
-      /* Chrome/Opera gets its native focus styles.
-     */ } }
     @media only screen and (-webkit-min-device-pixel-ratio: 0) {
       .switch-toggle input:focus ~ span a,
       .switch-toggle input:focus + label {
@@ -491,3 +484,13 @@
     -webkit-transform: translate3d(0, 0, 0); } }
 
 /*# sourceMappingURL=toggle-switch.css.map */
+    .switch-toggle input:focus ~ span a,
+    .switch-toggle input:focus + label {
+      outline-width: 2px;
+      outline-style: solid;
+      background-color: limegreen;
+      outline-color: limegreen !important;
+      color: white;
+      border-radius: 15px;
+      /* Chrome/Opera gets its native focus styles.
+     */ } }
