@@ -1,0 +1,78 @@
+/*-------------------------- MAIN STYLING --------------------------*/
+
+/*----- Widgets --------*/
+.widget-container-full, .widget-container-half {
+    width: 100vw;
+}
+.switch-toggle{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/*----- Social Stats --------*/
+.social-container{
+    @include flexy($just:flex-start);
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    min-width: 220px;
+    width: 100%;
+    background-color: $color-form;
+    align-items: center;
+}
+.social-text{
+    margin: 1em 0;
+}
+.social-text p{
+    color: $color-primary;
+}
+#social-number{
+    font-size: 38px;
+    color: $black;
+}
+.media-wrapper{
+    align-items: center;
+}
+#social{
+    margin-left: 0;
+}
+
+/*----- New Members/Recent Activity --------*/
+
+.members-container, .activity-container{
+    text-align: center;
+    border-bottom:1px $color-border solid;
+    padding: $primary-spacing 0;
+    @include mq(md) {
+            align-items: center;
+    }
+    @include mq(lg) {
+        height: 100px;
+    }
+}
+
+.last{
+    border: none;
+    padding-bottom: 0;
+}
+.hide{
+    display: none;
+}
+
+
+/*-------------------------- OTHER --------------------------*/
+.media-wrapper, .members-container, .activity-container, .traffic-header, .message-user, form, .settings, .lower-form{
+    @include flexy($disp:flex, $dir:column);
+}
+.nav, .traffic-nav, .settings-button, .second-header, .social-container, .main-nav, .message{
+    @include flexy($disp:flex, $dir:row);
+}
+.social-container, .form-field, .form-area, .button-primary, .button-disabled{
+    margin-top: $primary-spacing;
+}
+.settings, .message-user, .activity, .members, .social, .dashboard{
+    padding: $primary-spacing;
+}
+.margin-l{
+    margin-left: $primary-spacing;
+}
+

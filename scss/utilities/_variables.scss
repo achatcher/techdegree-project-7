@@ -1,0 +1,35 @@
+$font-stack-primary: 'Helvetica', sans-serif;
+
+// COLOR VARIABLES ------------------------------ / 
+
+$white: #fff;
+$black: #000;
+
+$color-primary: #7477bf;          // light purple
+$color-secondary: #4e4c72;        // dark purple
+$color-inactive: grey;
+$color-notification: limegreen;   // lime green
+$color-border: lightgray;           // gray
+$color-form: whitesmoke;           // lighter gray for form background
+
+$primary-spacing: .8em;
+// BUTTON COLOR VARIABLES ------------------------------ / 
+$buttons: (
+    'default': $color-secondary,
+    'inactive': $color-border,
+);
+
+// Number of columns ------------------------------ / 
+$cols: (
+    1:  1,
+    2:  2,
+);
+
+$columns: 2;
+
+// BORDER VARIABLE ------------------------------ / 
+
+
+// MEDIA QUERY BREAKPOINT VARIABLES ------------------------------ / 
+$break-m: 768px;
+$break-l: 1024px;

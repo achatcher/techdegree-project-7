@@ -1,0 +1,36 @@
+// Rounds item ------------------------------ / 
+@mixin roundy($dim) {
+    width: $dim;
+    height: $dim;
+    border-radius: 50%;
+}
+
+// Media Queries ------------------------------ / 
+@mixin mq($break) {
+    @if $break == 'md' {
+        @media (min-width: $break-m){
+            @content;
+        }
+    }
+    @else if $break == 'lg' {
+        @media (min-width: $break-l) {
+            @content;
+        }
+    }
+}
+
+// Flex Box ------------------------------ / 
+@mixin flexy(
+    $disp: flex,
+    $dir: null,
+    $wrap: null,
+    $just: null,
+    $basis: null) {
+    display: $disp;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    flex-basis: $basis;
+    justify-content: $just;
+    }
+
+

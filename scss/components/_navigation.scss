@@ -1,0 +1,31 @@
+/*-------------------------- NAV STYLING --------------------------*/
+
+nav{
+    background-color: $color-secondary;
+    height: 60px;
+    position: sticky;
+    top: 60px;
+    z-index: 29;
+    @include mq(md) {
+        height: initial;
+        width: 6vw;
+        max-width: 80px;
+    }
+}
+
+.nav{
+    list-style: none;
+    padding: 0;
+    justify-content: space-around;
+    @include mq(md) {
+        position: fixed;
+    }
+}
+
+.main-nav{
+    justify-content: center;
+}
+.icon{
+    margin: 0 $primary-spacing;
+}
+

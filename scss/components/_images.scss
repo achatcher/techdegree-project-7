@@ -1,0 +1,31 @@
+
+/*-------------------------- SVG STYLING --------------------------*/
+svg {
+    fill: $white;
+}
+.svg-container{
+    width: 30px;
+    height: 30px;
+}
+.bell-path, .hover, .message{
+    transition: .35s ease-in; 
+}
+.hover:hover{
+    fill: $black;
+}
+.bell-icon:hover .bell-path{
+    fill: $black !important;
+}
+.main-image{
+    @include roundy(35px);
+    margin: 0 10px;
+}
+.social-image{
+    margin: auto .8em;
+    width: 65px;
+    height: 65px;
+}
+.profile-image{
+    @include roundy(65px);
+    margin: 0 auto .25em;
+}

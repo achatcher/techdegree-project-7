@@ -1,0 +1,38 @@
+/*-------------------------- BUTTON STYLING --------------------------*/
+button {
+    cursor: pointer;
+    background-color: $color-primary;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    padding: $primary-spacing 0;
+}
+#save, #cancel{
+    width: 48%;
+}
+.settings-button{
+    justify-content: space-between;
+}
+.button-disabled{
+    background-color: $color-inactive;
+}
+
+/*----- TOGGLE SWITCH --------*/
+.switch-light{
+    @include flexy($disp:flex);
+    align-items: center;
+    margin-bottom: 2em;
+}
+.switch-light p{
+    margin-right: auto;
+}
+.switch-ios.switch-light > span{
+    width: 100px;
+}
+.switch-ios.switch-light input:checked ~ span {
+    border-color: $color-primary;
+    box-shadow: inset 0 0 0 30px $color-primary;
+}
+.switch-ios.switch-light input:checked ~ span a {
+border-color: $color-primary;
+}

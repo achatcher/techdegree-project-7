@@ -1,0 +1,91 @@
+/*-------------------------- MEDIA QUERIES --------------------------*/
+@include mq(md) {
+    .traffic, .social, .activity, .members, .second-header, .alert, .message-user, .settings {
+        grid-column: 1 / span 2;
+    }
+    .daily {
+        grid-column: 1 / span 1;
+    }
+    .mobile {
+        grid-column: 2 / span 1;
+    }
+    .widget-container-full, .social {
+        width: 94vw;
+        margin: 0 auto;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+    .members-text, .members-info, .activity-text{
+        @include flexy($disp:flex);
+    }
+    .nav, .members-info, .activity-text{
+        @include flexy($dir:column);
+    }
+    .traffic-header, .media-wrapper, .members-container, .activity-container{
+        @include flexy($dir:row);
+    }
+    .members-info, .activity-text{
+        text-align: left;
+    }
+    .media-wrapper{
+        justify-content: space-around;
+    }
+    .text-input {
+        display: inline;
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        font-family: $font-stack-primary;
+        height: 30px;
+        line-height: 50px;
+        padding: 20px;
+        width: 45%;
+        max-width: 600px;
+        margin-top: 2.63px;
+        margin-left: auto;
+        margin-right: 10px;
+        top: 1px;
+        transition: box-shadow 150ms ease-in-out; 
+    }
+    .text-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px $color-primary inset; 
+    }
+    .social-container{
+        width: 32%;
+    }
+    .hide{
+        display: inline;
+        margin-left: auto;
+    }
+    .switch-toggle{
+        margin-right: $primary-spacing;
+    }
+    .date, .switch-toggle{
+        margin-left: auto;
+    }
+    .date{
+        padding-top: 10px;
+    }
+    .activity-text, .members-text{
+        margin-left: $primary-spacing;
+    }
+    .members-text{
+        width: 100%;
+    }
+    .activity-text{
+        width: 80%;
+    }
+    .marg-top, .icon{
+        margin: $primary-spacing 0 0 0;
+    }
+}
+@include mq(lg) {
+    .daily, .members, .message-user {
+        grid-column: 1 / span 1;
+    }
+    .mobile, .activity, .settings {
+        grid-column: 2 / span 1;
+    }
+}
+

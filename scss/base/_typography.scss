@@ -1,0 +1,54 @@
+/*-------------------------- BASE STYLING --------------------------*/
+
+* {
+	box-sizing: border-box;
+  line-height: 1.3;
+  // color: $color-secondary;
+}
+
+body {
+  min-width: 320px;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: $font-stack-primary;
+}
+
+a{
+  color: $color-primary;
+  text-decoration: none;
+}
+
+canvas{
+  padding: $primary-spacing;
+  margin-top: .5em;
+  min-height: 145px;
+}
+
+section {
+  border-bottom:1px $color-border solid;
+  padding: $primary-spacing 0;
+  @include mq(md) {
+    border-right:1px $color-border solid;
+  }
+}
+
+/*-------------------------- TYPOGRAPHY --------------------------*/
+h2, p, a{
+  font-size: .85em;
+}
+h1{
+  font-size: 1.2rem;
+}
+.headline, .dashboard, h3, body{
+  font-weight: lighter;
+}
+p, h3{
+  margin: 0;
+}
+h3{
+  text-transform: uppercase;
+  font-size: small;
+}
+h2{
+  margin: $primary-spacing;
+}

@@ -1,0 +1,23 @@
+/*-------------------------- Input --------------------------*/
+
+.form-field, .form-area {
+    border-radius: 6px;
+    background-color: $color-form;
+    border: $color-border 1px solid;
+    padding: $primary-spacing;
+}
+.form-area{
+    min-height: 150px;
+}
+.upper-form{
+    margin-top: 1rem;
+    @include mq(md) {
+        width: 45%;
+    }
+    @include mq(lg) {
+        width: 60%;
+    }
+}
+.lower-form{
+    margin-top: auto;
+}
