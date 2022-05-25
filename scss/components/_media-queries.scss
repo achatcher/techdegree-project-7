@@ -43,7 +43,7 @@
         max-width: 600px;
         margin-top: 2.63px;
         margin-left: auto;
-        margin-right: 10px;
+        margin-right: $gutter;
         top: 1px;
         transition: box-shadow 150ms ease-in-out; 
     }
@@ -59,7 +59,7 @@
         margin-left: auto;
     }
     .switch-toggle{
-        margin-right: $primary-spacing;
+        margin-right: $gutter;
     }
     .date, .switch-toggle{
         margin-left: auto;

@@ -12,7 +12,9 @@ $color-notification: limegreen;   // lime green
 $color-border: lightgray;           // gray
 $color-form: whitesmoke;           // lighter gray for form background
 
-$primary-spacing: .8em;
+$primary-spacing: 1em;
+$gutter: 1.5em;
+
 // BUTTON COLOR VARIABLES ------------------------------ / 
 $buttons: (
     'default': $color-secondary,

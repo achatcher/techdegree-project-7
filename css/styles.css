@@ -361,14 +361,14 @@ a {
 }
 
 canvas {
-  padding: 0.8em;
+  padding: 1em 1.5em;
   margin-top: .5em;
   min-height: 145px;
 }
 
 section {
   border-bottom: 1px lightgray solid;
-  padding: 0.8em 0;
+  padding: 1em 0;
 }
 
 @media (min-width: 768px) {
@@ -400,7 +400,7 @@ h3 {
 }
 
 h2 {
-  margin: 0.8em;
+  margin: 1em 1.5em;
 }
 
 /*-------------------------- BUTTON STYLING --------------------------*/
@@ -410,7 +410,7 @@ button {
   color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 0.8em 0;
+  padding: 1em 0;
 }
 
 #save, #cancel {
@@ -462,7 +462,7 @@ button {
   border-radius: 6px;
   background-color: whitesmoke;
   border: lightgray 1px solid;
-  padding: 0.8em;
+  padding: 1em 1.5em;
 }
 
 .form-area {
@@ -567,7 +567,7 @@ nav {
 }
 
 .icon {
-  margin: 0 0.8em;
+  margin: 0 1em;
 }
 
 /*-------------------------- SVG STYLING --------------------------*/
@@ -674,6 +674,11 @@ nav {
 }
 
 /*-------------------------- HEADER STYLING --------------------------*/
+.main-header {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -784,8 +789,8 @@ nav {
   background-color: #7477bf;
   color: #fff;
   border-radius: 6px;
-  padding: 0.8em;
-  margin: 0.8em;
+  padding: 1em;
+  margin: 1em 1.5em;
 }
 
 .alert-banner-close, .message-close {
@@ -848,7 +853,7 @@ nav {
 .members-container, .activity-container {
   text-align: center;
   border-bottom: 1px lightgray solid;
-  padding: 0.8em 0;
+  padding: 1em 0;
 }
 
 @media (min-width: 768px) {
@@ -896,15 +901,15 @@ nav {
 }
 
 .social-container, .form-field, .form-area, .button-primary, .button-disabled {
-  margin-top: 0.8em;
+  margin-top: 1em;
 }
 
 .settings, .message-user, .activity, .members, .social, .dashboard {
-  padding: 0.8em;
+  padding: 1em;
 }
 
 .margin-l {
-  margin-left: 0.8em;
+  margin-left: 1.5em;
 }
 
 /*-------------------------- MEDIA QUERIES --------------------------*/
@@ -973,7 +978,7 @@ nav {
     max-width: 600px;
     margin-top: 2.63px;
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 1.5em;
     top: 1px;
     -webkit-transition: -webkit-box-shadow 150ms ease-in-out;
     transition: -webkit-box-shadow 150ms ease-in-out;
@@ -993,7 +998,7 @@ nav {
     margin-left: auto;
   }
   .switch-toggle {
-    margin-right: 0.8em;
+    margin-right: 1.5em;
   }
   .date, .switch-toggle {
     margin-left: auto;
@@ -1002,7 +1007,7 @@ nav {
     padding-top: 10px;
   }
   .activity-text, .members-text {
-    margin-left: 0.8em;
+    margin-left: 1em;
   }
   .members-text {
     width: 100%;
@@ -1011,7 +1016,7 @@ nav {
     width: 80%;
   }
   .marg-top, .icon {
-    margin: 0.8em 0 0 0;
+    margin: 1em 0 0 0;
   }
 }
 

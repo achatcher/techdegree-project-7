@@ -1,5 +1,8 @@
 /*-------------------------- HEADER STYLING --------------------------*/
-
+.main-header{
+    padding-left: $gutter;
+    padding-right: $gutter;
+}
 .header{
     @include flexy($disp:flex, $dir: row);
     align-items: center;
@@ -83,7 +86,7 @@
     color: $white;
     border-radius: 6px;
     padding: $primary-spacing;
-    margin: $primary-spacing;
+    margin: $primary-spacing $gutter;
 }
 .alert-banner-close, .message-close{
     padding: 0;

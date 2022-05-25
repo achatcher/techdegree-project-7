@@ -4,7 +4,7 @@
     border-radius: 6px;
     background-color: $color-form;
     border: $color-border 1px solid;
-    padding: $primary-spacing;
+    padding: $primary-spacing $gutter;
 }
 .form-area{
     min-height: 150px;
